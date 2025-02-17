@@ -9,3 +9,98 @@
 .common-btn {
   @apply w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
 }
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  /* background-color: aquamarine; */
+}
+
+.inner-container {
+  padding: 1.5rem 0;
+  /* background-color: crimson; */
+  width: 90%;
+  columns: 280px;
+}
+
+
+.no-pins {
+  text-align: center;
+  color: gray;
+  font-size: 1rem;
+}
+
+.navbar {
+  background-color: rgb(164, 46, 46);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 10%;
+  position: fixed;
+}
+
+.navbar-inner {
+  height: 100vh;
+  padding: 20px 0px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 3%;
+}
+
+.navbar-logo img {
+  height: 1.5rem;
+  margin: 5px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 5%;
+  width: 90%;
+  border-radius: 0px 30px 30px 0px;
+  transition: 0.2s linear;
+}
+
+.nav-link:hover {
+  background-color: red;
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 2rem; /* Equivalent to w-8 */
+  height: 2rem; /* Equivalent to h-8 */
+  border-radius: 50%;
+  background-color: #d1d5db; /* Equivalent to bg-gray-300 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: #4a4a4a; 
+}
+
+.logout{
+  color: white;
+}

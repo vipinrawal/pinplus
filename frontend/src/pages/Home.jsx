@@ -10,15 +10,13 @@ const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="flex justify-center max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <div className="px-4 py-6 sm:px-0 columns-3xs">
-            <div className="flex flex-wrap m-4">
-              {pins && pins.length > 0 ? (
-                pins.map((e, i) => <PinCard key={i} pin={e} />)
+        <div className="container">
+          <div className="inner-container">
+              {pins?.length > 0 ? (
+                pins.map((e) => <PinCard key={e.id || e.someUniqueField} pin={e} />)
               ) : (
-                <p>No Pins Yet</p>
+                <p className="no-pins">No Pins Yet</p>
               )}
-            </div>
           </div>
         </div>
       )}
