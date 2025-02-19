@@ -7,7 +7,7 @@ const Navbar = ({ user }) => {
       <div className="navbar-inner">
         <Link to="/" className="navbar-logo">
           <img
-            src="/public/vite.svg"
+            src="https://res.cloudinary.com/dmcowp1wi/image/upload/v1739971080/vite_graqcz.svg"
             alt="Pinterest Logo"/>
         </Link>
         <div className="nav-links">
