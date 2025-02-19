@@ -21,7 +21,7 @@ const Login = () => {
         <div className="login-container">
           <div className="login-subcontainer">
             <div className="login-card">
-              <img src="/public/vite.svg" alt=""/>
+              <img src="https://res.cloudinary.com/dmcowp1wi/image/upload/v1739971080/vite_graqcz.svg" alt=""/>
               <h1>Hello Again!</h1>
               <p>Welcome back you've been missed!</p>
               <form onSubmit={submitHandler}>
