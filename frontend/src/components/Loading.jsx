@@ -7,7 +7,7 @@ export const LoadingAnimation = () => {
 export const Loading = () => {
   return (
     <div className="loading">
-      <img src="/public/loading1.gif" alt="" />
+      <img src="https://res.cloudinary.com/dmcowp1wi/image/upload/v1739971530/loading1_zxjquc.gif" alt="" />
     </div>
   );
 };
