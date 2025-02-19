@@ -2,30 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-.common-input {
-  @apply mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm;
+body, html{
+  scrollbar-width: none;
 }
 
+.login-container{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/public/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: gray;
+}
+
+.login-subcontainer{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: rgba(134, 132, 132, 0.5); */
+  /* backdrop-filter: blur(1px); */
+}
+
+.login-card{
+  height: 100%;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px 0px 0px  30px;
+  gap: 1rem;
+}
+
+.login-card img{
+  height: 5rem;
+}
+
+.login-card h1{
+  font-size: 2rem;
+}
+
+.login-card span{
+  color: skyblue;
+}
+
+.login-card form{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* background-color: #3b82f6; */
+}
+
+/* Input Fields */
+.common-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.common-input:focus {
+  outline: none;
+  border: 1px solid #D65A5A;
+  box-shadow: 0px 0px 3px #D65A5A;
+}
+
+/* Submit Button */
 .common-btn {
-  @apply w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500;
+  display: block;
+  width: 100%;
+  background-color: #BD081C;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.common-btn:hover {
+  background-color: #D65A5A; /* blue-600 */
+}
+
+.loading{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img{
+  width: 50%;
 }
 
 .container {
   display: flex;
   justify-content: flex-end;
   max-width: 100%;
-  margin: 0 auto;
   padding: 1.5rem 1rem;
-  /* background-color: aquamarine; */
 }
 
 .inner-container {
+  /* background-color: #374151; */
   padding: 1.5rem 0;
-  /* background-color: crimson; */
-  width: 90%;
-  columns: 280px;
+  width: 95%;
+  columns: 220px;
 }
-
 
 .no-pins {
   text-align: center;
@@ -34,10 +124,9 @@
 }
 
 .navbar {
-  background-color: rgb(164, 46, 46);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   height: 100vh;
-  width: 10%;
+  width: 5%;
   position: fixed;
 }
 
@@ -48,7 +137,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
+  background-color: white;
 }
 
 .navbar-logo {
@@ -59,13 +148,7 @@
 }
 
 .navbar-logo img {
-  height: 1.5rem;
-  margin: 5px;
-}
-
-.navbar-brand {
-  color: white;
-  font-size: 1.25rem;
+  height: 2rem;
 }
 
 .nav-links {
@@ -76,16 +159,18 @@
 }
 
 .nav-link {
-  color: white;
   text-decoration: none;
   padding: 5%;
   width: 90%;
   border-radius: 0px 30px 30px 0px;
   transition: 0.2s linear;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-link:hover {
-  background-color: red;
+  background-color: #D65A5A;
 }
 
 /* User Avatar */
@@ -101,6 +186,481 @@
   color: #4a4a4a; 
 }
 
-.logout{
-  color: white;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile-wrapper {
+  /* background-color: #374151; */
+  padding: 1.5rem;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.profile-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #d1d5db; /* Tailwind's gray-300 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar span {
+  font-size: 1.875rem; /* Tailwind's text-3xl */
+  color: #374151; /* Tailwind's gray-700 */
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.profile-email {
+  text-align: center;
+  color: #6b7280;
+}
+
+.follow{
+  color: #6b7280;
+  display: flex;
+  gap: 1rem;
+}
+
+.follow-button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logout-button {
+  background-color: #d1d5db;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.logout-button:hover {
+  background-color: #ef4444; 
+}
+
+
+/* Container */
+.upload-container {
+  display: flex;
+  width: 100vw;
+  padding: 5% 0%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+/* File Upload Box */
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upload-box img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.upload-box .upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.upload-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e7eb; /* gray-200 */
+  border-radius: 50%;
+}
+
+.upload-text {
+  color: #6b7280; /* gray-500 */
+}
+
+.upload-instructions {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #9ca3af; /* gray-400 */
+  text-align: center;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* gray-100 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Form Box */
+.form-box {
+  width: 100%;
+  max-width: 32rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pincard{
+  width: 90%;
+  margin: 10px;
+}
+@media (max-width: 700px){
+
+  
+  .navbar{
+    width: 100vw;
+    height: 6%;
+    z-index: 1;
+    bottom: 0%;
+  }
+
+  .navbar-inner{
+    width: 100vw;
+    height: 100%;
+  }
+
+  .nav-links{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-link{
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-link i{
+    font-size: 24px;
+  }
+
+  .nav-link span{
+    display: none;
+  }
+
+  .nav-link:hover{
+    background-color: transparent;
+  }
+
+  .navbar-logo{
+    display: none;
+  }
+
+  .container{
+    padding: 0;
+    padding-bottom: 50%;
+  }
+
+  .inner-container{
+    /* background-color: #374151; */
+    width: 100vw;
+    columns: 160px;
+    padding: 5px;
+    gap: 0px;
+  }
+
+  .profile-container{
+    padding-bottom: 50%;
+  }
+
+  .profile-wrapper{
+    width: 100vw;
+    /* background-color: #374151; */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+
+  .details{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-avatar{
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .logout-button{
+    position: absolute;
+    right: 5%;
+    font-size: 1.2rem;
+    background-color: transparent;
+  }
+
+  .logout-button span{
+    display: none;
+    padding: 0;
+  }
+
+  .follow-button{
+    justify-content: flex-start;
+  }
+
+  .pincard{
+    width: 90%;
+  }
+
+  .upload-container{
+    padding-bottom: 20%;
+  }
+
+  .login-card{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+  .login-card form{
+    width: 60%;
+  }
+  
+  
+}
+
+
+
+
+
+
+.pin-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7fafc; 
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.pin-page-wrapper {
+  background-color: white;
+  border-radius: 0.5rem; 
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 56rem;
+}
+
+.image-container {
+  width: 50%;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.content-container {
+  width: 50%; 
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem; /* Tailwind: mb-4 */
+}
+
+.edit-input {
+  width: 200px;
+  border: 1px solid #ef4444;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.update-button {
+  width: 200px;
+  background-color: #ef4444; /* Tailwind: bg-red-500 */
+  color: #fff; /* Tailwind: text-white */
+  padding: 0.25rem 0.75rem; /* Tailwind: py-1 px-3 */
+  margin: 0.5rem 0; /* Tailwind: mt-2 mb-2 */
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #ef4444; /* Tailwind: bg-red-500 */
+  color: #fff;
+  padding: 0.8rem ;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0.2rem;
+}
+
+.description {
+  margin-bottom: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem; 
+  margin-bottom: 1rem; 
+}
+
+/* User avatar (circle) */
+.avatar {
+  border-radius: 50%;
+  height: 3rem; /* Tailwind: h-12 */
+  width: 3rem; /* Tailwind: w-12 */
+  background-color: #e2e8f0; /* Tailwind: bg-gray-300 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Margin left for user details */
+.user-details {
+  margin-left: 1rem; 
+}
+
+/* User name text */
+.user-name {
+  font-size: 1.125rem; 
+  font-weight: 600;
+}
+
+/* Follower count text */
+.followers {
+  color: #6b7280; /* Tailwind: text-gray-500 */
+}
+
+.comment-section {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem; 
+}
+
+.comment-form {
+  flex: 1;
+  display: flex;
+}
+
+.comment-input {
+  width: 60%;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+
+.send-button {
+  margin-left: 0.5rem; 
+  background-color: #ef4444; 
+  color: #fff;
+  padding: 0.5rem 1rem; 
+  border: none;
+  border-radius: 15%; 
+  cursor: pointer;
+}
+
+.divider {
+  margin: 0.75rem 0; 
+  border: none;
+  border-top: 1px solid #cbd5e0; 
+}
+
+
+.comment-list {
+  overflow-y: auto;
+  height: 16rem; 
+}
+
+.comment-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem; /* Tailwind: mb-4 */
+}
+
+
+.comment-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Tailwind: gap-3 */
+}
+
+.delete-comment-button {
+  background-color: #ef4444; 
+  color: #fff;
+  padding: 0.5rem; 
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width:700px){
+  .image-container{
+    width: 100%;
+  }
+  .content-container{
+    width: 100%;
+  }
+  .pin-page-container{
+  padding-bottom: 50%;
+  }
 }
