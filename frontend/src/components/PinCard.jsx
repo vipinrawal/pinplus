@@ -6,7 +6,7 @@ const PinCard = ({ pin }) => {
     <div>
       <div className="pincard">
         <div className="bg-white overflow-hidden shadow rounded-lg relative group cursor-pointer">
-          <img src={pin.image.url} alt="" className="w-full h-full" />
+          <img src={pin.image.url} alt="" loading="lazy" className="w-full h-full" />
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity duration-300 flex items-center justify-center">
             <div className="flex flex-col justify-center items-center gap-2">
               <Link
