@@ -283,7 +283,6 @@ body, html{
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #ef4444; 
 }
 
 .logout-button {
