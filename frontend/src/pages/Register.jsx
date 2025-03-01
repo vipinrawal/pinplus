@@ -22,7 +22,7 @@ const Register = () => {
         <div className="login-container">
           <div className="login-subcontainer">
             <div className="login-card">
-              <img src="https://res.cloudinary.com/dmcowp1wi/image/upload/v1739971080/vite_graqcz.svg" alt="" />
+              <img src="logo.png" alt="" />
               <h1>Welcome to pinplus</h1>
               <p>Create your account</p>
               <form onSubmit={submitHandler}>
